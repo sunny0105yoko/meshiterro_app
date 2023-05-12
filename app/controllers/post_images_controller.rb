@@ -15,9 +15,17 @@ class PostImagesController < ApplicationController
   end
 
   def show
-    @post_image = PostImage.find(params[:id])  
+    @post_image = PostImage.find(params[:id])
   end
 
+  def destroy
+    post_image = PostImage.find(params[:id])
+    post_image.destroy
+    if post_image.destroy
+      #Flash[:notice] = "book has been destroyed successfully."
+      redirect_to '/post_images'
+    end
+  end
   # 投稿データのストロングパラメータ
   private
 
