@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2023_05_12_080948) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "favarites", force: :cascade do |t|
+  create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
     t.integer "post_image_id"
     t.datetime "created_at", precision: 6, null: false
